@@ -9,7 +9,7 @@ const SpeciesModal = ({ type, position, id, closeModal }) => {
   useEffect(()=>{
     if (id) {
       setIsFetching(true);
-      fetch(`/api/${type}?id=${id}`)
+      fetch(`/api/species?id=${id}`)
         .then(resp => resp.json())
         .then(data => {
           setDetails(data);

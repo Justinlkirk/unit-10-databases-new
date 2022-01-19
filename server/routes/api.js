@@ -6,12 +6,16 @@ const router = express.Router();
 
 router.get('/',
   starWarsController.getCharacters,
-  (req, res) => res.status(200).json([])
+  (req, res) => res.status(200).json(res.locals.characters)
 );
 
 router.get('/species',
   starWarsController.getSpecies,
-  (req, res) => res.status(200).json({})
+  (req, res) => {
+    console.log(res.locals.species)
+    res.status(200).json(res.locals.species)
+    
+  }// object 
 );
 
 router.get('/homeworld',
