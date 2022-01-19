@@ -54,7 +54,7 @@ starWarsController.addCharacter = (req, res, next) => {
         await db.query(`INSERT INTO people_in_films (person_id, film_id) VALUES (${id}, ${film.id})`);
       }
     })
-    .then(()=>next());
+    .then(()=>next());// test
 };
 
 module.exports = starWarsController;
