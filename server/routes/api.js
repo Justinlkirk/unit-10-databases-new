@@ -12,8 +12,9 @@ router.get('/',
 router.get('/species',
   starWarsController.getSpecies,
   (req, res) => {
-    console.log(res.locals.species)
-    res.status(200).json(res.locals.species)
+    console.log('*** SPECIES GET REQUEST ***');
+    console.log(res.locals.species);
+    res.status(200).json(res.locals.species);
     
   }// object 
 );

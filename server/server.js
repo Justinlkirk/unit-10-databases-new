@@ -21,6 +21,7 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 /**
  * define route handlers
  */
+
 app.use('/api', apiRouter);
 
 // catch-all route handler for any requests to an unknown route
