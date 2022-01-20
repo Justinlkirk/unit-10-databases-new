@@ -12,16 +12,13 @@ router.get('/',
 router.get('/species',
   starWarsController.getSpecies,
   (req, res) => {
-    console.log('*** SPECIES GET REQUEST ***');
-    console.log(res.locals.species);
     res.status(200).json(res.locals.species);
-    
   }// object 
 );
 
 router.get('/homeworld',
   starWarsController.getHomeworld,
-  (req, res) => res.status(200).json({})
+  (req, res) => res.status(200).json(res.locals.homeworld)
 );
 
 router.get('/film',
@@ -31,7 +28,12 @@ router.get('/film',
 
 router.post('/character',
   starWarsController.addCharacter,
-  (req, res) => res.status(200).json({})
+  (req, res) => res.sendStatus(200)
+);
+
+router.delete('/character',
+  starWarsController.deleteCharacter,
+  (req, res) => res.sendStatus(200)
 );
 
 module.exports = router;
